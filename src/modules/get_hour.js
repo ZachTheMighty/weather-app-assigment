@@ -1,14 +1,17 @@
 import fetchData from "./fetch_data.js";
 
-export default async function (day, hour, location) {
+export default async function fn(day, hour, location) {
   const data = await fetchData(location);
   const hourInfo = data.days[day].hours[hour];
+  const { datetime, temp, feelslike, humidity, conditions, icon } = hourInfo;
   return {
-    datetime: hourInfo.datetime,
-    temp: hourInfo.temp,
-    feels: hourInfo.feelslike,
-    humidity: hourInfo.humidity,
-    condition: hourInfo.conditions,
-    icon: hourInfo.icon,
+    datetime,
+    temp,
+    feelslike,
+    humidity,
+    conditions,
+    icon,
   };
 }
+
+fn(0, 16, "amman").then((data) => console.log(data));
