@@ -1,4 +1,5 @@
 import fetchData from "./fetch_data.js";
+import get_hours from "./get_hours.js";
 
 export default async function (day, location) {
   const data = await fetchData(location);
