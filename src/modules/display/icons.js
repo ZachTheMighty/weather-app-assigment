@@ -5,7 +5,8 @@ import fog from "../../assets/icons/fog.svg";
 import hail from "../../assets/icons/hail.svg";
 import partlyCloudyDay from "../../assets/icons/partly-cloudy-day.svg";
 import partlyCloudyNight from "../../assets/icons/partly-cloudy-night.svg";
-import rainSnowShowers from "../../assets/icons/rain-snow-showers.svg";
+import rainSnowShowersDay from "../../assets/icons/rain-snow-showers-day.svg";
+import rainSnowShowersNight from "../../assets/icons/rain-snow-showers-night.svg";
 import rainSnow from "../../assets/icons/rain-snow.svg";
 import rain from "../../assets/icons/rain.svg";
 import showersDay from "../../assets/icons/showers-day.svg";
@@ -28,7 +29,8 @@ export default {
   hail,
   "partly-cloudy-day": partlyCloudyDay,
   "partly-cloudy-night": partlyCloudyNight,
-  "rain-snow-showers": rainSnowShowers,
+  "rain-snow-showers-day": rainSnowShowersDay,
+  "rain-snow-showers-night": rainSnowShowersNight,
   "rain-snow": rainSnow,
   rain,
   "showers-day": showersDay,
