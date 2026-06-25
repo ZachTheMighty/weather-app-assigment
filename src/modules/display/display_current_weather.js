@@ -5,7 +5,7 @@ export default function (currentConditions) {
   currentWeather.classList.add("current-weather");
 
   const currentIcon = document.createElement("img");
-  currentIcon.classList.add("icon");
+  currentIcon.classList.add("current-icon");
   currentIcon.src = icons[currentConditions.icon];
 
   const currentTemp = document.createElement("div");
