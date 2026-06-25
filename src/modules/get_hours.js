@@ -1,7 +1,7 @@
-import fetchData from "./fetch_data.js";
+import { fetchedData } from "./fetch_data.js";
 
-export default async function (day, location) {
-  const data = await fetchData(location);
+export default async function (day) {
+  const data = fetchedData;
   const hoursInfo = data.days[day].hours;
 
   let extractedHours = [];
