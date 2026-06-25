@@ -1,16 +1,23 @@
 import fetchData from "./fetch_data.js";
 
-export default async function (day, hour, location) {
+export default async function (day, location) {
   const data = await fetchData(location);
-  const hourInfo = data.days[day].hours[hour];
-  const { datetime, temp, feelslike, humidity, conditions, icon } = hourInfo;
+  const hoursInfo = data.days[day].hours;
 
-  return {
-    datetime,
-    temp,
-    feelslike,
-    humidity,
-    conditions,
-    icon,
-  };
+  let extractedHours = [];
+
+  hoursInfo.forEach((hour) => {
+    const { datetime, temp, feelslike, humidity, conditions, icon } = hour;
+
+    extractedHours.push({
+      datetime,
+      temp,
+      feelslike,
+      humidity,
+      conditions,
+      icon,
+    });
+  });
+
+  return extractedHours;
 }
