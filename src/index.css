@@ -55,3 +55,7 @@ button:hover {
 input:user-invalid {
   border: 1px solid red;
 }
+
+.current-weather {
+  display: flex;
+}

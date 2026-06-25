@@ -14,6 +14,7 @@ export default function () {
         form.location.setCustomValidity("enter a valid location");
         form.location.reportValidity();
       }),
+      fetchedData,
     );
   });
 
