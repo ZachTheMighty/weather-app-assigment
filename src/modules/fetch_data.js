@@ -1,4 +1,4 @@
-async function fetchData(location) {
+export default async function (location) {
   try {
     const response = await fetch(
       `https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${location}?unitGroup=metric&key=ZK4WAXABMLFLA7LWGZZBYK5F2`,
