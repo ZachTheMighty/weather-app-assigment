@@ -1,8 +1,7 @@
-import { fetchedData } from "./fetch_data.js";
 import get_hours from "./get_hours.js";
 
-export default async function (day) {
-  const data = fetchedData;
+export default async function (day, fetchedData) {
+  const data = await fetchedData;
   const dayInfo = data.days[day];
 
   const {
@@ -31,6 +30,6 @@ export default async function (day) {
     conditions,
     description,
     icon,
-    hours: await get_hours(day),
+    hours: await get_hours(day, fetchedData),
   };
 }
