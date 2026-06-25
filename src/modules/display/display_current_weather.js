@@ -1,10 +1,12 @@
+import icons from "./icons.js";
+
 export default function (currentConditions) {
   const currentWeather = document.createElement("div");
   currentWeather.classList.add("current-weather");
 
-  const currentIcon = document.createElement("div");
+  const currentIcon = document.createElement("img");
   currentIcon.classList.add("icon");
-  currentIcon.textContent = currentConditions.icon;
+  currentIcon.src = icons[currentConditions.icon];
 
   const currentTemp = document.createElement("div");
   currentTemp.classList.add("current-temp");
