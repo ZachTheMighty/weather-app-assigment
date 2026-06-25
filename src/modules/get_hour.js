@@ -1,6 +1,6 @@
 import fetchData from "./fetch_data.js";
 
-async function getHour(day, hour, location) {
+export default async function (day, hour, location) {
   const data = await fetchData(location);
   const hourInfo = data.days[day].hours[hour];
   return {
