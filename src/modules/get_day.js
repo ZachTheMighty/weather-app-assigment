@@ -1,7 +1,7 @@
 import { fetchedData } from "./fetch_data.js";
 import get_hours from "./get_hours.js";
 
-export default async function fn(day) {
+export default async function (day) {
   const data = fetchedData;
   const dayInfo = data.days[day];
 
@@ -34,5 +34,3 @@ export default async function fn(day) {
     hours: await get_hours(day),
   };
 }
-
-fn(0).then((data) => console.log(data));
