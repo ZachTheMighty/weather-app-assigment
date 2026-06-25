@@ -1,5 +1,5 @@
 import fetchData from "./fetch_data.js";
-import getDay from "./get_day.js";
+import getDays from "./get_days.js";
 import displayWeather from "./display_weather.js";
 
 export default function () {
@@ -10,7 +10,7 @@ export default function () {
     const fetchedData = fetchData(form.location.value);
 
     displayWeather(
-      getDay(0, fetchedData).catch(() => {
+      getDays(fetchedData).catch(() => {
         form.location.setCustomValidity("enter a valid location");
         form.location.reportValidity();
       }),

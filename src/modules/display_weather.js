@@ -1,3 +1,3 @@
-export default async function (day) {
-  console.log(await day);
+export default async function (days) {
+  console.log(await days);
 }
