@@ -1,6 +1,6 @@
-import fetchData from "./fetch_data.js";
-import getDays from "./get_days.js";
-import displayWeather from "./display_weather.js";
+import fetchData from "./fetch/fetch_data.js";
+import getDays from "./fetch/get_days.js";
+import displayWeather from "./display/display_weather.js";
 
 export default function () {
   const form = document.querySelector("form");
