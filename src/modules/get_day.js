@@ -5,7 +5,6 @@ export default async function (day, fetchedData) {
   const dayInfo = data.days[day];
 
   const {
-    timezone,
     datetime,
     tempmax,
     tempmin,
@@ -20,7 +19,7 @@ export default async function (day, fetchedData) {
   } = dayInfo;
 
   return {
-    timezone,
+    timezone: data.timezone,
     datetime,
     tempmax,
     tempmin,
