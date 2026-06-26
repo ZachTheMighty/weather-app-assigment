@@ -1,4 +1,4 @@
-import icons from "./icons.js";
+import icons from "../display/icons.js";
 
 export default class {
   constructor() {
@@ -14,7 +14,7 @@ export default class {
     this.currentTemp.classList.add("current-temp");
 
     this.app.append(this.currentIcon, this.currentTemp);
-    document.body.append(app);
+    document.body.append(this.app);
   }
 
   render(currentConditions) {
