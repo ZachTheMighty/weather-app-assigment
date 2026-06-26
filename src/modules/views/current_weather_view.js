@@ -2,10 +2,16 @@ import icons from "../icons.js";
 
 export default class {
   constructor() {
+    this.form = document.querySelector("form");
+
     this.app = document.createElement("div");
     this.app.classList.add("current-weather");
 
-    this.form = document.querySelector("form");
+    this.leftDiv = document.createElement("div");
+    this.leftDiv.classList.add("left-div");
+
+    this.tempInfo = document.createElement("div");
+    this.tempInfo.classList.add("temp-info");
 
     this.currentIcon = document.createElement("img");
     this.currentIcon.classList.add("current-icon");
@@ -13,14 +19,19 @@ export default class {
     this.currentTemp = document.createElement("div");
     this.currentTemp.classList.add("current-temp");
 
+    this.tempInfo.append(this.currentIcon, this.currentTemp);
+
+    this.leftDiv.append(this.tempInfo);
+
+    this.rightDiv = document.createElement("div");
+    this.rightDiv.classList.add("right-div");
+
     this.currentDescription = document.createElement("div");
     this.currentDescription.classList.add("current-description");
 
-    this.app.append(
-      this.currentIcon,
-      this.currentTemp,
-      this.currentDescription,
-    );
+    this.rightDiv.append(this.currentDescription);
+
+    this.app.append(this.leftDiv, this.rightDiv);
     document.body.append(this.app);
   }
 
