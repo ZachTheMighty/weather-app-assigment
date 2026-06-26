@@ -21,4 +21,11 @@ export default class {
     this.currentIcon.src = icons[currentConditions.icon];
     this.currentTemp.textContent = currentConditions.temp + "&deg;C";
   }
+
+  bindRenderCurrent(handler) {
+    this.form.addEventListener("submit", (event) => {
+      event.preventDefault();
+      handler(this.form.location.value);
+    });
+  }
 }
