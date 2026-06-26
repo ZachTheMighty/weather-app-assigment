@@ -73,7 +73,7 @@ export default class {
     this.snapshotTime.textContent = convertTime(currentConditions.datetime);
   }
 
-  bindRenderCurrent(handler) {
+  bindRender(handler) {
     this.form.addEventListener("submit", (event) => {
       event.preventDefault();
       handler(this.form.location);

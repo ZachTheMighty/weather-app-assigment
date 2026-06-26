@@ -6,7 +6,7 @@ import dayView from "./views/days_view.js";
 
 import fetchData from "./fetch/fetch_data.js";
 
-class CurrentWeatherController {
+class Controller {
   constructor(currentModel, currentView, dayModel, dayView) {
     this.currentModel = currentModel;
     this.currentView = currentView;
@@ -14,12 +14,12 @@ class CurrentWeatherController {
     this.dayModel = dayModel;
     this.dayView = dayView;
 
-    this.currentView.bindRenderCurrent((locationInput) =>
-      this.handleRenderCurrent(locationInput),
+    this.currentView.bindRender((locationInput) =>
+      this.handleRender(locationInput),
     );
   }
 
-  async handleRenderCurrent(locationInput) {
+  async handleRender(locationInput) {
     try {
       const fetchedData = fetchData(locationInput.value);
       const currentConditions =
@@ -36,7 +36,7 @@ class CurrentWeatherController {
   }
 }
 
-export default new CurrentWeatherController(
+export default new Controller(
   new CurrentWeatherModel(),
   new CurrentWeatherView(),
   new dayModel(),
