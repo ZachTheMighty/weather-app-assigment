@@ -1,6 +1,6 @@
 export default function fn(time) {
   const splitTime = time.split(":");
-  let [hours, minutes, seconds] = splitTime;
+  let [hours] = splitTime;
   let symbol;
 
   if (+hours > 0 && +hours < 12) symbol = "AM";
@@ -12,5 +12,5 @@ export default function fn(time) {
     symbol = "PM";
     hours = (+hours - 12).toString();
   }
-  return `${hours}:${minutes}:${seconds} ${symbol}`;
+  return `${hours}:00 ${symbol}`;
 }
