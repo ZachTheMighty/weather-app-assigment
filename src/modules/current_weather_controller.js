@@ -14,10 +14,15 @@ class CurrentWeatherController {
   }
 
   async handleRenderCurrent(location) {
-    const fetchedData = fetchData(location);
-    const currentConditions = await this.model.getCurrentWeather(fetchedData);
+    try {
+      const fetchedData = fetchData(location);
+      const currentConditions = await this.model.getCurrentWeather(fetchedData);
 
-    this.view.render(currentConditions);
+      this.view.render(currentConditions);
+    } catch (error) {
+      console.log(error);
+      console.log(location + " is an invalid location");
+    }
   }
 }
 
