@@ -5,6 +5,8 @@ export default class {
     this.app = document.createElement("div");
     this.app.classList.add("current-weather");
 
+    this.form = document.querySelector("form");
+
     this.currentIcon = document.createElement("img");
     this.currentIcon.classList.add("current-icon");
 
