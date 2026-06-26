@@ -7,7 +7,7 @@ export default class {
     this.app = document.createElement("days");
     this.app.classList.add("days");
 
-    document.body.append(app);
+    document.body.append(this.app);
   }
 
   render(day) {
@@ -28,11 +28,11 @@ export default class {
     tempsDiv.classList.add("temps-div");
 
     const tempMax = document.createElement("div");
-    tempMax.classList("temp-max");
+    tempMax.classList.add("temp-max");
     tempMax.textContent = day.tempmax;
 
     const tempMin = document.createElement("div");
-    tempMin.classList("temp-min");
+    tempMin.classList.add("temp-min");
     tempMin.textContent = day.tempmin;
 
     tempsDiv.append(tempMax, tempMin);
