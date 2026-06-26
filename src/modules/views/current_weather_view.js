@@ -1,4 +1,4 @@
-import icons from "../display/icons.js";
+import icons from "../icons.js";
 
 export default class {
   constructor() {
