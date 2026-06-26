@@ -22,7 +22,18 @@ export default class {
 
     this.tempInfo.append(this.currentIcon, this.currentTemp);
 
-    this.leftDiv.append(this.tempInfo);
+    this.extraInfo = document.createElement("div");
+    this.extraInfo.classList.add("extra-info");
+
+    this.currentHumidity = document.createElement("div");
+    this.currentHumidity.classList.add("current-humidity");
+
+    this.currentWind = document.createElement("div");
+    this.currentWind.classList.add("current-wind");
+
+    this.extraInfo.append(this.currentHumidity, this.currentWind);
+
+    this.leftDiv.append(this.tempInfo, this.extraInfo);
 
     this.rightDiv = document.createElement("div");
     this.rightDiv.classList.add("right-div");
@@ -50,6 +61,9 @@ export default class {
   render(currentConditions) {
     this.currentIcon.src = icons[currentConditions.icon];
     this.currentTemp.textContent = currentConditions.temp + "℃";
+
+    this.currentHumidity.textContent = `Humidity: ${Math.floor(currentConditions.humidity)}%`;
+    this.currentWind.textContent = `Wind: ${Math.floor(currentConditions.windspeed)}km/h`;
 
     this.currentDescription.textContent = currentConditions.conditions;
     this.currentDay.textContent = new Date().toLocaleString("en-us", {
