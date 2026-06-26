@@ -1,5 +1,6 @@
 export default class {
   async getCurrentWeather(fetchedData) {
-    return ({ currentConditions } = await fetchedData);
+    const { currentConditions } = await fetchedData;
+    return currentConditions;
   }
 }
