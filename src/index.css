@@ -82,6 +82,25 @@ input:user-invalid {
   gap: 8px;
 }
 
+.days {
+  display: flex;
+  gap: 12px;
+  font-size: 1rem;
+}
+
+.day-div {
+  text-align: center;
+}
+
+.temps-div {
+  display: flex;
+  gap: 2px;
+}
+
+.temp-min {
+  color: #545454;
+}
+
 img {
   width: 2.5em;
 }
