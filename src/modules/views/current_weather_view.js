@@ -13,13 +13,21 @@ export default class {
     this.currentTemp = document.createElement("div");
     this.currentTemp.classList.add("current-temp");
 
-    this.app.append(this.currentIcon, this.currentTemp);
+    this.currentDescription = document.createElement("div");
+    this.currentDescription.classList.add("current-description");
+
+    this.app.append(
+      this.currentIcon,
+      this.currentTemp,
+      this.currentDescription,
+    );
     document.body.append(this.app);
   }
 
   render(currentConditions) {
     this.currentIcon.src = icons[currentConditions.icon];
     this.currentTemp.textContent = currentConditions.temp + " ℃";
+    this.currentDescription.textContent = currentConditions.conditions;
   }
 
   bindRenderCurrent(handler) {
