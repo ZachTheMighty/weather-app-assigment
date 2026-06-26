@@ -29,11 +29,11 @@ export default class {
 
     const tempMax = document.createElement("div");
     tempMax.classList.add("temp-max");
-    tempMax.textContent = day.tempmax;
+    tempMax.textContent = Math.floor(day.tempmax);
 
     const tempMin = document.createElement("div");
     tempMin.classList.add("temp-min");
-    tempMin.textContent = day.tempmin;
+    tempMin.textContent = Math.floor(day.tempmin);
 
     tempsDiv.append(tempMax, tempMin);
 
