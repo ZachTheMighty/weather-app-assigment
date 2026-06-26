@@ -52,7 +52,7 @@ export default class {
 
     this.datetimeDiv.append(this.currentDay, this.snapshotTime);
 
-    this.rightDiv.append(this.currentDescription, this.datetimeDiv);
+    this.rightDiv.append(this.datetimeDiv, this.currentDescription);
 
     this.app.append(this.leftDiv, this.rightDiv);
     document.body.append(this.app);
