@@ -29,10 +29,18 @@ export default class {
     this.currentDescription = document.createElement("div");
     this.currentDescription.classList.add("current-description");
 
+    this.datetimeDiv = document.createElement("div");
+    this.datetimeDiv.classList.add("datetime-div");
+
     this.currentDay = document.createElement("div");
     this.currentDay.classList.add("current-day");
 
-    this.rightDiv.append(this.currentDescription, this.currentDay);
+    this.snapshotTime = document.createElement("div");
+    this.snapshotTime.classList.add("snapshot-time");
+
+    this.datetimeDiv.append(this.currentDay, this.snapshotTime);
+
+    this.rightDiv.append(this.currentDescription, this.datetimeDiv);
 
     this.app.append(this.leftDiv, this.rightDiv);
     document.body.append(this.app);
@@ -46,6 +54,7 @@ export default class {
     this.currentDay.textContent = new Date().toLocaleString("en-us", {
       weekday: "long",
     });
+    this.snapshotTime.textContent = currentConditions.datetime;
   }
 
   bindRenderCurrent(handler) {
