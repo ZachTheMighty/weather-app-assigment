@@ -1,14 +1,20 @@
 import CurrentWeatherModel from "./models/current_weather_model.js";
 import CurrentWeatherView from "./views/current_weather_view.js";
 
+import dayModel from "./models/days_model.js";
+import dayView from "./views/days_view.js";
+
 import fetchData from "./fetch/fetch_data.js";
 
 class CurrentWeatherController {
-  constructor(model, view) {
-    this.model = model;
-    this.view = view;
+  constructor(currentModel, currentView, dayModel, dayView) {
+    this.currentModel = currentModel;
+    this.currentView = currentView;
 
-    this.view.bindRenderCurrent((locationInput) =>
+    this.dayModel = dayModel;
+    this.dayView = dayView;
+
+    this.currentView.bindRenderCurrent((locationInput) =>
       this.handleRenderCurrent(locationInput),
     );
   }
@@ -16,9 +22,13 @@ class CurrentWeatherController {
   async handleRenderCurrent(locationInput) {
     try {
       const fetchedData = fetchData(locationInput.value);
-      const currentConditions = await this.model.getCurrentWeather(fetchedData);
+      const currentConditions =
+        await this.currentModel.getCurrentWeather(fetchedData);
+      this.currentView.render(currentConditions);
 
-      this.view.render(currentConditions);
+      (await this.dayModel.getWeekDays(fetchedData)).forEach((day) =>
+        this.dayView.render(day),
+      );
     } catch (error) {
       console.error(error);
       locationInput.setCustomValidity("Enter a valid location");
@@ -29,4 +39,6 @@ class CurrentWeatherController {
 export default new CurrentWeatherController(
   new CurrentWeatherModel(),
   new CurrentWeatherView(),
+  new dayModel(),
+  new dayView(),
 );
