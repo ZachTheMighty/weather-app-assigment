@@ -1,3 +1,2 @@
 import "./index.css";
-import init from "./modules/form_event.js";
-init();
+import Controller from "./modules/current_weather_controller.js";
