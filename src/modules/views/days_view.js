@@ -41,4 +41,8 @@ export default class {
 
     this.app.append(dayDiv);
   }
+
+  emptyApp() {
+    this.app.textContent = "";
+  }
 }
