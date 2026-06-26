@@ -1,4 +1,5 @@
 import icons from "../icons.js";
+import convertTime from "../convert_to_am_pm.js";
 
 export default class {
   constructor() {
@@ -54,7 +55,7 @@ export default class {
     this.currentDay.textContent = new Date().toLocaleString("en-us", {
       weekday: "long",
     });
-    this.snapshotTime.textContent = currentConditions.datetime;
+    this.snapshotTime.textContent = convertTime(currentConditions.datetime);
   }
 
   bindRenderCurrent(handler) {
