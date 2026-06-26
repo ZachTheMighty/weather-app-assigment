@@ -29,7 +29,10 @@ export default class {
     this.currentDescription = document.createElement("div");
     this.currentDescription.classList.add("current-description");
 
-    this.rightDiv.append(this.currentDescription);
+    this.currentDay = document.createElement("div");
+    this.currentDay.classList.add("current-day");
+
+    this.rightDiv.append(this.currentDescription, this.currentDay);
 
     this.app.append(this.leftDiv, this.rightDiv);
     document.body.append(this.app);
@@ -38,7 +41,11 @@ export default class {
   render(currentConditions) {
     this.currentIcon.src = icons[currentConditions.icon];
     this.currentTemp.textContent = currentConditions.temp + "℃";
+
     this.currentDescription.textContent = currentConditions.conditions;
+    this.currentDay.textContent = new Date().toLocaleString("en-us", {
+      weekday: "long",
+    });
   }
 
   bindRenderCurrent(handler) {
