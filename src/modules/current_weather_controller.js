@@ -8,20 +8,20 @@ class CurrentWeatherController {
     this.model = model;
     this.view = view;
 
-    this.view.bindRenderCurrent((location) =>
-      this.handleRenderCurrent(location),
+    this.view.bindRenderCurrent((locationInput) =>
+      this.handleRenderCurrent(locationInput),
     );
   }
 
-  async handleRenderCurrent(location) {
+  async handleRenderCurrent(locationInput) {
     try {
-      const fetchedData = fetchData(location);
+      const fetchedData = fetchData(locationInput.value);
       const currentConditions = await this.model.getCurrentWeather(fetchedData);
 
       this.view.render(currentConditions);
     } catch (error) {
-      console.log(error);
-      console.log(location + " is an invalid location");
+      console.error(error);
+      locationInput.setCustomValidity("Enter a valid location");
     }
   }
 }

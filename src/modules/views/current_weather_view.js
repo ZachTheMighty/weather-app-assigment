@@ -25,7 +25,11 @@ export default class {
   bindRenderCurrent(handler) {
     this.form.addEventListener("submit", (event) => {
       event.preventDefault();
-      handler(this.form.location.value);
+      handler(this.form.location);
     });
+
+    this.form.location.addEventListener("input", () =>
+      this.form.location.setCustomValidity(""),
+    );
   }
 }
