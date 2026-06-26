@@ -14,4 +14,9 @@ export default class {
     this.app.append(this.currentIcon, this.currentTemp);
     document.body.append(app);
   }
+
+  render(currentConditions) {
+    this.currentIcon.src = icons[currentConditions.icon];
+    this.currentTemp.textContent = currentConditions.temp + "&deg;C";
+  }
 }
