@@ -60,6 +60,7 @@ export default class {
 
   render(currentConditions) {
     this.currentIcon.src = icons[currentConditions.icon];
+    this.currentIcon.alt = currentConditions.icon + " icon";
     this.currentTemp.textContent = currentConditions.temp + "℃";
 
     this.currentHumidity.textContent = `Humidity: ${Math.floor(currentConditions.humidity)}%`;
