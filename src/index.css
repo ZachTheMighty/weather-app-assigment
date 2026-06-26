@@ -84,7 +84,7 @@ input:user-invalid {
 
 .days {
   display: flex;
-  gap: 12px;
+  gap: 24px;
   font-size: 1rem;
 }
 
@@ -94,7 +94,7 @@ input:user-invalid {
 
 .temps-div {
   display: flex;
-  gap: 2px;
+  gap: 8px;
 }
 
 .temp-min {
