@@ -58,4 +58,9 @@ input:user-invalid {
 
 .current-weather {
   display: flex;
+  align-items: center;
+}
+
+img {
+  width: 50px;
 }
