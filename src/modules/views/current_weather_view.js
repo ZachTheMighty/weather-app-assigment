@@ -37,7 +37,7 @@ export default class {
 
   render(currentConditions) {
     this.currentIcon.src = icons[currentConditions.icon];
-    this.currentTemp.textContent = currentConditions.temp + " ℃";
+    this.currentTemp.textContent = currentConditions.temp + "℃";
     this.currentDescription.textContent = currentConditions.conditions;
   }
 
