@@ -59,7 +59,6 @@ input:user-invalid {
 .current-weather {
   width: 500px;
   display: flex;
-  align-items: center;
   justify-content: space-between;
 }
 
@@ -67,6 +66,15 @@ input:user-invalid {
 .right-div {
   font-size: 1.4rem;
   text-align: center;
+}
+
+.left-div {
+  display: flex;
+  gap: 12px;
+}
+
+.extra-info {
+  font-size: 1rem;
 }
 
 .datetime-div {
