@@ -87,6 +87,12 @@ class Controller {
         this.dayView.renderDays(day);
       });
 
+      this.weekDays.forEach((day) => {
+        day.hours.forEach((hour) => {
+          hour.temp = convertTemp(hour.temp, "c");
+        });
+      });
+
       this.currentConditions.windspeed = convertSpeed(
         this.currentConditions.windspeed,
         "k",
@@ -100,6 +106,12 @@ class Controller {
         this.currentConditions.windspeed,
         " mph",
       );
+
+      this.dayView.emptyHours();
+      this.weekDays.forEach((day) => {
+        if (day.selected)
+          this.handleRenderHours(this.getCorrespondingDayObject(day));
+      });
     }
     if (
       unit.classList.contains("celsius") &&
@@ -117,6 +129,12 @@ class Controller {
         this.dayView.renderDays(day);
       });
 
+      this.weekDays.forEach((day) => {
+        day.hours.forEach((hour) => {
+          hour.temp = convertTemp(hour.temp, "f");
+        });
+      });
+
       this.currentConditions.windspeed = convertSpeed(
         this.currentConditions.windspeed,
         "m",
@@ -130,6 +148,12 @@ class Controller {
         this.currentConditions.windspeed,
         " kmph",
       );
+
+      this.dayView.emptyHours();
+      this.weekDays.forEach((day) => {
+        if (day.selected)
+          this.handleRenderHours(this.getCorrespondingDayObject(day));
+      });
     }
   }
 
