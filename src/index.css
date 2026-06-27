@@ -133,7 +133,7 @@ img {
 .hours-div {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 24px;
   font-size: 0.8rem;
 }
 
