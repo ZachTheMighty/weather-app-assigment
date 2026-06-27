@@ -45,6 +45,11 @@ class Controller {
   handleRenderHours(dayDiv) {
     const day = this.getCorrespondingDayObject(dayDiv);
 
+    this.selectDay(day);
+
+    this.dayView.emptyApp();
+    this.weekDays.forEach((day) => this.dayView.renderDays(day));
+
     this.dayView.emptyHours();
     document.body.append(this.dayView.hoursDiv);
 
@@ -70,6 +75,12 @@ class Controller {
       });
       return result;
     }
+  }
+
+  selectDay(dayObject) {
+    this.weekDays.forEach((day) => {
+      day === dayObject ? (day.selected = true) : (day.selected = false);
+    });
   }
 }
 

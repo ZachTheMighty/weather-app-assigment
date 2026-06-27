@@ -45,6 +45,8 @@ export default class {
     dayDiv.append(dayName, dayIcon, tempsDiv);
 
     this.app.append(dayDiv);
+
+    if (day.selected) this.selectDay(dayDiv);
   }
 
   renderHours(hour) {
@@ -80,6 +82,14 @@ export default class {
     this.app.addEventListener("click", (event) => {
       const dayDiv = event.target.closest(".day-div");
       if (dayDiv) handler(dayDiv);
+    });
+  }
+
+  selectDay(dayDiv) {
+    this.app.childNodes.forEach((day) => {
+      day === dayDiv
+        ? day.classList.add("selected-day")
+        : day.classList.remove("selected-day");
     });
   }
 }
