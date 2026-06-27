@@ -18,10 +18,18 @@ export default class {
     this.currentIcon.classList.add("current-icon");
     this.currentIcon.classList.toggle("hide-current-icon");
 
+    this.celsius = document.createElement("div");
+    this.seperator = document.createElement("div");
+    this.fahrenheit = document.createElement("div");
+
+    this.degree = document.createElement("div");
+    this.degree.classList.add("degree");
+    this.degree.append(this.celsius, this.seperator, this.fahrenheit);
+
     this.currentTemp = document.createElement("div");
     this.currentTemp.classList.add("current-temp");
 
-    this.tempInfo.append(this.currentIcon, this.currentTemp);
+    this.tempInfo.append(this.currentIcon, this.currentTemp, this.degree);
 
     this.extraInfo = document.createElement("div");
     this.extraInfo.classList.add("extra-info");
@@ -64,7 +72,11 @@ export default class {
     this.currentIcon.alt = currentConditions.icon + " icon";
     this.currentIcon.classList.toggle("hide-current-icon");
 
-    this.currentTemp.textContent = Math.floor(currentConditions.temp) + "°C";
+    this.currentTemp.textContent = Math.floor(currentConditions.temp);
+
+    this.celsius.textContent = "°C";
+    this.seperator.textContent = "|";
+    this.fahrenheit.textContent = "°F";
 
     this.currentHumidity.textContent = `Humidity: ${Math.floor(currentConditions.humidity)}%`;
     this.currentWind.textContent = `Wind: ${Math.floor(currentConditions.windspeed)}km/h`;
