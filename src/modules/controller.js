@@ -14,6 +14,8 @@ class Controller {
     this.dayModel = dayModel;
     this.dayView = dayView;
 
+    this.weekDays;
+
     this.currentView.bindRender((locationInput) =>
       this.handleRender(locationInput),
     );
@@ -28,9 +30,9 @@ class Controller {
       this.currentView.render(currentConditions);
 
       this.dayView.emptyDays();
-      (await this.dayModel.getWeekDays(fetchedData)).forEach((day) =>
-        this.dayView.renderDays(day),
-      );
+
+      this.weekDays = await this.dayModel.getWeekDays(fetchedData);
+      this.weekDays.forEach((day) => this.dayView.renderDays(day));
     } catch (error) {
       console.error(error);
       locationInput.setCustomValidity("Enter a valid location");
