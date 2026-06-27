@@ -13,6 +13,8 @@ export default function fn(time, noColon) {
     hours = (+hours - 12).toString();
   }
 
+  if (hours[0] === "0") hours = hours.slice(1);
+
   if (noColon) return `${hours} ${symbol}`;
   return `${hours}:00 ${symbol}`;
 }
