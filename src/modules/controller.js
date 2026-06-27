@@ -16,6 +16,7 @@ class Controller {
     this.dayModel = dayModel;
     this.dayView = dayView;
 
+    this.currentConditions;
     this.weekDays;
 
     this.currentView.bindRender((locationInput) =>
@@ -27,9 +28,9 @@ class Controller {
   async handleRender(locationInput) {
     try {
       const fetchedData = fetchData(locationInput.value);
-      const currentConditions =
+      this.currentConditions =
         await this.currentModel.getCurrentWeather(fetchedData);
-      this.currentView.render(currentConditions);
+      this.currentView.render(this.currentConditions);
 
       this.dayView.emptyApp();
       this.dayView.emptyHours();
