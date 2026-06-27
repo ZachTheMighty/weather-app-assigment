@@ -1,4 +1,5 @@
 import icons from "../icons.js";
+import convertTime from "../convert_to_am_pm.js";
 
 export default class {
   constructor() {
@@ -41,6 +42,23 @@ export default class {
     dayDiv.append(dayName, dayIcon, tempsDiv);
 
     this.app.append(dayDiv);
+  }
+
+  renderHours(hour) {
+    const hourDiv = document.createElement("div");
+    hourDiv.classList.add("hour-div");
+
+    const timeDiv = document.createElement("div");
+    timeDiv.classList.add("time-div");
+    timeDiv.textContent = convertTime(hour.datetime, true);
+
+    const tempDiv = document.createElement("div");
+    tempDiv.classList.add("temp-div");
+    tempDiv.textContent = hour.temp;
+
+    hourDiv.append(timeDiv, tempDiv);
+
+    document.body.append(hourDiv);
   }
 
   emptyDays() {

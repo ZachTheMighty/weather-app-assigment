@@ -17,6 +17,7 @@ class Controller {
     this.currentView.bindRender((locationInput) =>
       this.handleRender(locationInput),
     );
+    this.dayView.bindRenderHours((dayDiv) => handleRenderHours(dayDiv));
   }
 
   async handleRender(locationInput) {
@@ -35,6 +36,8 @@ class Controller {
       locationInput.setCustomValidity("Enter a valid location");
     }
   }
+
+  handleRenderHours(dayDiv) {}
 }
 
 export default new Controller(
