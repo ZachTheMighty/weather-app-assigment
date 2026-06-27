@@ -13,6 +13,7 @@ export default class {
   render(day) {
     const dayDiv = document.createElement("div");
     dayDiv.classList.add("day-div");
+    dayDiv.setAttribute("data-id", day.id);
 
     const dayName = document.createElement("div");
     dayName.classList.add("day-name");

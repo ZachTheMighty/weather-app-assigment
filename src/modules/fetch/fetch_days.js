@@ -22,6 +22,7 @@ export default async function (fetchedData) {
     } = day;
 
     weekDays.push({
+      id: crypto.randomUUID(),
       timezone: data.timezone,
       datetime,
       tempmax,
