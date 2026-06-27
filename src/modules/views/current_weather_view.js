@@ -89,6 +89,10 @@ export default class {
     this.snapshotTime.textContent = convertTime(currentConditions.datetime);
   }
 
+  renderToggleUnits(convertedTemp) {
+    this.currentTemp.textContent = convertedTemp;
+  }
+
   emptyApp() {
     this.app.textContent = "";
   }
