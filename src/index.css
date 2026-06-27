@@ -104,3 +104,12 @@ input:user-invalid {
 img {
   width: 2.5em;
 }
+
+.hours-div {
+  display: flex;
+  gap: 12px;
+}
+
+.hour-div {
+  text-align: center;
+}
