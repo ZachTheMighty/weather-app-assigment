@@ -42,9 +42,11 @@ class Controller {
   handleRenderHours(dayDiv) {}
 
   getCorrespondingDayObject(dayDiv) {
+    let result;
     this.weekDays.forEach((day) => {
-      if (dayDiv.getAttribute("data-id") === day.id) return day;
+      if (dayDiv.getAttribute("data-id") === day.id) result = day;
     });
+    return result;
   }
 }
 
