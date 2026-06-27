@@ -40,6 +40,12 @@ class Controller {
   }
 
   handleRenderHours(dayDiv) {}
+
+  getCorrespondingDayObject(dayDiv) {
+    this.weekDays.forEach((day) => {
+      if (dayDiv.getAttribute("data-id") === day.id) return day;
+    });
+  }
 }
 
 export default new Controller(
