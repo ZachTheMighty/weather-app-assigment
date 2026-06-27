@@ -23,7 +23,7 @@ export default function fn(time, noColon) {
     let [hours] = splitTime;
 
     if (time.includes("AM")) {
-      hours.padStart(2, "0");
+      hours = hours.padStart(2, "0");
 
       return `${hours}:00:00`;
     } else {
