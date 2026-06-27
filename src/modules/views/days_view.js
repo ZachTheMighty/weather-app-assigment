@@ -58,10 +58,10 @@ export default class {
 
     hourDiv.append(timeDiv, tempDiv);
 
-    document.body.append(hourDiv);
+    this.app.append(hourDiv);
   }
 
-  emptyDays() {
+  emptyApp() {
     this.app.textContent = "";
   }
 
