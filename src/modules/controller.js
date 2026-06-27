@@ -30,6 +30,7 @@ class Controller {
       this.currentView.render(currentConditions);
 
       this.dayView.emptyApp();
+      this.dayView.emptyHours();
 
       this.weekDays = await this.dayModel.getWeekDays(fetchedData);
       this.weekDays.forEach((day) => this.dayView.renderDays(day));
@@ -43,7 +44,7 @@ class Controller {
     const day = this.getCorrespondingDayObject(dayDiv);
 
     this.dayView.emptyHours();
-    this.dayView.app.append(this.dayView.hoursDiv);
+    document.body.append(this.dayView.hoursDiv);
 
     day.hours.forEach((hour) => this.dayView.renderHours(hour));
   }
