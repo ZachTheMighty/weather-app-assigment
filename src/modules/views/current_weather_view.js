@@ -98,4 +98,9 @@ export default class {
       this.form.location.setCustomValidity(""),
     );
   }
+
+  bindToggleUnits(handler) {
+    this.celsius.addEventListener("click", () => handler(this.celsius));
+    this.fahrenheit.addEventListener("click", () => handler(this.fahrenheit));
+  }
 }
