@@ -23,10 +23,13 @@ export default function fn(time, noColon) {
     let [hours] = splitTime;
 
     if (time.includes("AM")) {
+      if (hours === "12") return "00:00:00";
+
       hours = hours.padStart(2, "0");
 
       return `${hours}:00:00`;
     } else {
+      if (hours === "12") return "12:00:00";
       hours = (Number(hours) + 12).toString();
 
       return `${hours}:00:00`;
