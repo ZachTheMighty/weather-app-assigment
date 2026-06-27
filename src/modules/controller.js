@@ -7,8 +7,8 @@ import dayView from "./views/days_view.js";
 import fetchData from "./fetch/fetch_data.js";
 
 import convertTime from "./convert_time.js";
-
 import convertTemp from "./convert_temp.js";
+import convertSpeed from "./convert_speed.js";
 
 class Controller {
   constructor(currentModel, currentView, dayModel, dayView) {
@@ -79,9 +79,19 @@ class Controller {
         this.currentConditions.temp,
         "c",
       );
+      this.currentConditions.windspeed = convertSpeed(
+        this.currentConditions.windspeed,
+        "k",
+      );
+
       unit.classList.add("selected-temp");
       unit.previousElementSibling.classList.remove("selected-temp");
-      this.currentView.renderToggleUnits(this.currentConditions.temp);
+
+      this.currentView.renderToggleUnits(
+        this.currentConditions.temp,
+        this.currentConditions.windspeed,
+        " mph",
+      );
     }
     if (
       unit.classList.contains("celsius") &&
@@ -91,9 +101,19 @@ class Controller {
         this.currentConditions.temp,
         "f",
       );
+      this.currentConditions.windspeed = convertSpeed(
+        this.currentConditions.windspeed,
+        "m",
+      );
+
       unit.classList.add("selected-temp");
       unit.nextElementSibling.classList.remove("selected-temp");
-      this.currentView.renderToggleUnits(this.currentConditions.temp);
+
+      this.currentView.renderToggleUnits(
+        this.currentConditions.temp,
+        this.currentConditions.windspeed,
+        " kmph",
+      );
     }
   }
 

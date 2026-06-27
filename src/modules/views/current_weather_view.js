@@ -81,7 +81,7 @@ export default class {
     this.fahrenheit.textContent = "°F";
 
     this.currentHumidity.textContent = `Humidity: ${Math.floor(currentConditions.humidity)}%`;
-    this.currentWind.textContent = `Wind: ${Math.floor(currentConditions.windspeed)}km/h`;
+    this.currentWind.textContent = `Wind: ${Math.floor(currentConditions.windspeed)} kmph`;
 
     this.currentDescription.textContent = currentConditions.conditions;
     this.currentDay.textContent = new Date().toLocaleString("en-us", {
@@ -90,8 +90,9 @@ export default class {
     this.snapshotTime.textContent = convertTime(currentConditions.datetime);
   }
 
-  renderToggleUnits(convertedTemp) {
+  renderToggleUnits(convertedTemp, convertedSpeed, velocityUnit) {
     this.currentTemp.textContent = convertedTemp;
+    this.currentWind.textContent = "Wind: " + convertedSpeed + velocityUnit;
   }
 
   emptyApp() {
