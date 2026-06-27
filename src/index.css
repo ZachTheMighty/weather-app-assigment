@@ -70,6 +70,12 @@ input:user-invalid {
   font-size: 2rem;
 }
 
+.right-div {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+}
+
 .temp-info {
   position: relative;
 }
