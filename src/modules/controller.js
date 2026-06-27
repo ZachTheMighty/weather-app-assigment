@@ -19,7 +19,7 @@ class Controller {
     this.currentView.bindRender((locationInput) =>
       this.handleRender(locationInput),
     );
-    this.dayView.bindRenderHours((dayDiv) => handleRenderHours(dayDiv));
+    this.dayView.bindRenderHours((dayDiv) => this.handleRenderHours(dayDiv));
   }
 
   async handleRender(locationInput) {
