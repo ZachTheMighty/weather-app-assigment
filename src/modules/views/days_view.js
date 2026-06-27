@@ -10,7 +10,7 @@ export default class {
     document.body.append(this.app);
   }
 
-  render(day) {
+  renderDays(day) {
     const dayDiv = document.createElement("div");
     dayDiv.classList.add("day-div");
     dayDiv.setAttribute("data-id", day.id);
@@ -43,7 +43,7 @@ export default class {
     this.app.append(dayDiv);
   }
 
-  emptyApp() {
+  emptyDays() {
     this.app.textContent = "";
   }
 

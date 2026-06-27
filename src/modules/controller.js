@@ -26,9 +26,9 @@ class Controller {
         await this.currentModel.getCurrentWeather(fetchedData);
       this.currentView.render(currentConditions);
 
-      this.dayView.emptyApp();
+      this.dayView.emptyDays();
       (await this.dayModel.getWeekDays(fetchedData)).forEach((day) =>
-        this.dayView.render(day),
+        this.dayView.renderDays(day),
       );
     } catch (error) {
       console.error(error);
