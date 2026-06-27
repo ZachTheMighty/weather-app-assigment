@@ -88,6 +88,10 @@ input:user-invalid {
   bottom: 25px;
 }
 
+.degree > :not(.selected-temp) {
+  color: gray;
+}
+
 .extra-info {
   font-size: 1rem;
 }
