@@ -29,7 +29,7 @@ class Controller {
         await this.currentModel.getCurrentWeather(fetchedData);
       this.currentView.render(currentConditions);
 
-      this.dayView.emptyDays();
+      this.dayView.emptyApp();
 
       this.weekDays = await this.dayModel.getWeekDays(fetchedData);
       this.weekDays.forEach((day) => this.dayView.renderDays(day));
