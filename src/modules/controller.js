@@ -8,6 +8,8 @@ import fetchData from "./fetch/fetch_data.js";
 
 import convertTime from "./convert_time.js";
 
+import convertTemp from "./convert_temp.js";
+
 class Controller {
   constructor(currentModel, currentView, dayModel, dayView) {
     this.currentModel = currentModel;
@@ -22,6 +24,7 @@ class Controller {
     this.currentView.bindRender((locationInput) =>
       this.handleRender(locationInput),
     );
+    this.currentView.bindToggleUnits((unit) => this.handleToggleUnits(unit));
     this.dayView.bindRenderHours((dayDiv) => this.handleRenderHours(dayDiv));
   }
 
@@ -64,6 +67,33 @@ class Controller {
         .forEach((hour) => this.dayView.renderHours(hour));
     } else {
       day.hours.forEach((hour) => this.dayView.renderHours(hour));
+    }
+  }
+
+  handleToggleUnits(unit) {
+    if (
+      unit.classList.contains("fahrenheit") &&
+      !unit.classList.contains("selected-temp")
+    ) {
+      this.currentConditions.temp = convertTemp(
+        this.currentConditions.temp,
+        "c",
+      );
+      unit.classList.add("selected-temp");
+      unit.previousElementSibling.classList.remove("selected-temp");
+      this.currentView.renderToggleUnits(this.currentConditions.temp);
+    }
+    if (
+      unit.classList.contains("celsius") &&
+      !unit.classList.contains("selected-temp")
+    ) {
+      this.currentConditions.temp = convertTemp(
+        this.currentConditions.temp,
+        "f",
+      );
+      unit.classList.add("selected-temp");
+      unit.nextElementSibling.classList.remove("selected-temp");
+      this.currentView.renderToggleUnits(this.currentConditions.temp);
     }
   }
 

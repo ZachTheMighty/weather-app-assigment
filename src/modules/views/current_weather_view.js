@@ -20,6 +20,7 @@ export default class {
 
     this.celsius = document.createElement("div");
     this.celsius.classList.add("celsius");
+    this.celsius.classList.add("selected-temp");
 
     this.fahrenheit = document.createElement("div");
     this.fahrenheit.classList.add("fahrenheit");
