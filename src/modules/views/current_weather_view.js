@@ -1,5 +1,5 @@
 import icons from "../icons.js";
-import convertTime from "../convert_to_am_pm.js";
+import convertTime from "../convert_time.js";
 
 export default class {
   constructor() {
