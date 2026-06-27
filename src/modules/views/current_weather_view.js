@@ -91,6 +91,10 @@ export default class {
     this.snapshotTime.textContent = convertTime(currentConditions.datetime);
   }
 
+  emptyApp() {
+    this.app.textContent = "";
+  }
+
   bindRender(handler) {
     this.form.addEventListener("submit", (event) => {
       event.preventDefault();
