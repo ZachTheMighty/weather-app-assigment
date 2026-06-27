@@ -57,7 +57,7 @@ export default class {
 
     const tempDiv = document.createElement("div");
     tempDiv.classList.add("temp-div");
-    tempDiv.textContent = hour.temp;
+    tempDiv.textContent = Math.floor(hour.temp) + "°";
 
     hourDiv.append(timeDiv, tempDiv);
 
