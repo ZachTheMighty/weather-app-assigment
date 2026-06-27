@@ -45,4 +45,11 @@ export default class {
   emptyApp() {
     this.app.textContent = "";
   }
+
+  bindRenderHours(handler) {
+    this.app.addEventListener("click", (event) => {
+      const dayDiv = event.target.closest(".day");
+      if (dayDiv) handler(dayDiv);
+    });
+  }
 }
