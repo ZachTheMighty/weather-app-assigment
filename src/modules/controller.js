@@ -57,12 +57,19 @@ class Controller {
       .forEach((hour) => this.dayView.renderHours(hour));
   }
 
-  getCorrespondingDayObject(dayDiv) {
+  getCorrespondingDayObject(object) {
     let result;
-    this.weekDays.forEach((day) => {
-      if (dayDiv.getAttribute("data-id") === day.id) result = day;
-    });
-    return result;
+    if (object instanceof Node) {
+      this.weekDays.forEach((day) => {
+        if (object.getAttribute("data-id") === day.id) result = day;
+      });
+      return result;
+    } else {
+      this.dayView.app.childNodes.forEach((dayDiv) => {
+        if (dayDiv.getAttribute("data-id") === object.id) result = dayDiv;
+      });
+      return result;
+    }
   }
 }
 
