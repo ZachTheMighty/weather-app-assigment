@@ -42,6 +42,7 @@ class Controller {
   handleRenderHours(dayDiv) {
     const day = this.getCorrespondingDayObject(dayDiv);
 
+    this.dayView.emptyHours();
     day.hours.forEach((hour) => this.dayView.renderHours(hour));
   }
 

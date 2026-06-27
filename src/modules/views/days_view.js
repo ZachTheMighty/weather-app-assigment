@@ -65,6 +65,10 @@ export default class {
     this.app.textContent = "";
   }
 
+  emptyHours() {
+    this.hoursDiv.textContent = "";
+  }
+
   bindRenderHours(handler) {
     this.app.addEventListener("click", (event) => {
       const dayDiv = event.target.closest(".day-div");
