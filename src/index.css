@@ -106,6 +106,10 @@ img {
   height: 2.5em;
 }
 
+.hide-current-icon {
+  display: none;
+}
+
 .hours-div {
   display: flex;
   align-items: center;

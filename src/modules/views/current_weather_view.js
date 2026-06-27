@@ -16,6 +16,7 @@ export default class {
 
     this.currentIcon = document.createElement("img");
     this.currentIcon.classList.add("current-icon");
+    this.currentIcon.classList.toggle("hide-current-icon");
 
     this.currentTemp = document.createElement("div");
     this.currentTemp.classList.add("current-temp");
@@ -61,7 +62,9 @@ export default class {
   render(currentConditions) {
     this.currentIcon.src = icons[currentConditions.icon];
     this.currentIcon.alt = currentConditions.icon + " icon";
-    this.currentTemp.textContent = Math.floor(currentConditions.temp) + "℃";
+    this.currentIcon.classList.toggle("hide-current-icon");
+
+    this.currentTemp.textContent = Math.floor(currentConditions.temp) + "°C";
 
     this.currentHumidity.textContent = `Humidity: ${Math.floor(currentConditions.humidity)}%`;
     this.currentWind.textContent = `Wind: ${Math.floor(currentConditions.windspeed)}km/h`;
