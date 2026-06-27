@@ -1,4 +1,4 @@
-export default function fn(time) {
+export default function fn(time, noColon) {
   const splitTime = time.split(":");
   let [hours] = splitTime;
   let symbol;
@@ -12,5 +12,7 @@ export default function fn(time) {
     symbol = "PM";
     hours = (+hours - 12).toString();
   }
+
+  if (noColon) return `${hours} ${symbol}`;
   return `${hours}:00 ${symbol}`;
 }
