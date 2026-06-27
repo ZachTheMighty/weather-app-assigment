@@ -28,7 +28,6 @@ export default function fn(time, noColon) {
       return `${hours}:00:00`;
     } else {
       hours = (Number(hours) + 12).toString();
-      hours.padStart(2, "0");
 
       return `${hours}:00:00`;
     }
