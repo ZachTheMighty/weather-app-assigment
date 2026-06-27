@@ -79,6 +79,14 @@ class Controller {
         this.currentConditions.temp,
         "c",
       );
+
+      this.dayView.emptyApp();
+      this.weekDays.forEach((day) => {
+        day.tempmin = convertTemp(day.tempmin, "c");
+        day.tempmax = convertTemp(day.tempmax, "c");
+        this.dayView.renderDays(day);
+      });
+
       this.currentConditions.windspeed = convertSpeed(
         this.currentConditions.windspeed,
         "k",
@@ -101,6 +109,14 @@ class Controller {
         this.currentConditions.temp,
         "f",
       );
+
+      this.dayView.emptyApp();
+      this.weekDays.forEach((day) => {
+        day.tempmin = convertTemp(day.tempmin, "f");
+        day.tempmax = convertTemp(day.tempmax, "f");
+        this.dayView.renderDays(day);
+      });
+
       this.currentConditions.windspeed = convertSpeed(
         this.currentConditions.windspeed,
         "m",
