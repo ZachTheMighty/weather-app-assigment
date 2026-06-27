@@ -21,13 +21,12 @@ export default class {
     this.celsius = document.createElement("div");
     this.celsius.classList.add("celsius");
 
-    this.seperator = document.createElement("div");
     this.fahrenheit = document.createElement("div");
     this.fahrenheit.classList.add("fahrenheit");
 
     this.degree = document.createElement("div");
     this.degree.classList.add("degree");
-    this.degree.append(this.celsius, this.seperator, this.fahrenheit);
+    this.degree.append(this.celsius, this.fahrenheit);
 
     this.currentTemp = document.createElement("div");
     this.currentTemp.classList.add("current-temp");
@@ -77,8 +76,7 @@ export default class {
 
     this.currentTemp.textContent = Math.floor(currentConditions.temp);
 
-    this.celsius.textContent = "°C";
-    this.seperator.textContent = "|";
+    this.celsius.textContent = "°C|";
     this.fahrenheit.textContent = "°F";
 
     this.currentHumidity.textContent = `Humidity: ${Math.floor(currentConditions.humidity)}%`;
