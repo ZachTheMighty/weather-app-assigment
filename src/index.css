@@ -103,11 +103,14 @@ input:user-invalid {
 
 img {
   width: 2.5em;
+  height: 2.5em;
 }
 
 .hours-div {
   display: flex;
+  align-items: center;
   gap: 12px;
+  font-size: 0.8rem;
 }
 
 .hour-div {
