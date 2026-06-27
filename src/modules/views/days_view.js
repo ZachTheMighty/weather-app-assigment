@@ -67,7 +67,7 @@ export default class {
 
   bindRenderHours(handler) {
     this.app.addEventListener("click", (event) => {
-      const dayDiv = event.target.closest(".day");
+      const dayDiv = event.target.closest(".day-div");
       if (dayDiv) handler(dayDiv);
     });
   }
