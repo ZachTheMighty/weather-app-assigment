@@ -40,6 +40,9 @@ class Controller {
 
       this.weekDays = await this.dayModel.getWeekDays(fetchedData);
       this.weekDays.forEach((day) => this.dayView.renderDays(day));
+
+      this.selectDay(this.weekDays[0]);
+      this.handleRenderHours(this.getCorrespondingDayObject(this.weekDays[0]));
     } catch (error) {
       console.error(error);
       locationInput.setCustomValidity("Enter a valid location");
