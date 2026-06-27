@@ -53,13 +53,17 @@ class Controller {
     this.dayView.emptyHours();
     document.body.append(this.dayView.hoursDiv);
 
-    day.hours
-      .filter(
-        (hour) =>
-          hour.datetime >
-          convertTime(this.currentView.snapshotTime.textContent),
-      )
-      .forEach((hour) => this.dayView.renderHours(hour));
+    if (day === this.weekDays[0]) {
+      day.hours
+        .filter(
+          (hour) =>
+            hour.datetime >
+            convertTime(this.currentView.snapshotTime.textContent),
+        )
+        .forEach((hour) => this.dayView.renderHours(hour));
+    } else {
+      day.hours.forEach((hour) => this.dayView.renderHours(hour));
+    }
   }
 
   getCorrespondingDayObject(object) {
