@@ -6,6 +6,8 @@ import dayView from "./views/days_view.js";
 
 import fetchData from "./fetch/fetch_data.js";
 
+import convertTime from "./convert_time.js";
+
 class Controller {
   constructor(currentModel, currentView, dayModel, dayView) {
     this.currentModel = currentModel;
@@ -46,7 +48,13 @@ class Controller {
     this.dayView.emptyHours();
     document.body.append(this.dayView.hoursDiv);
 
-    day.hours.forEach((hour) => this.dayView.renderHours(hour));
+    day.hours
+      .filter(
+        (hour) =>
+          hour.datetime >
+          convertTime(this.currentView.snapshotTime.textContent),
+      )
+      .forEach((hour) => this.dayView.renderHours(hour));
   }
 
   getCorrespondingDayObject(dayDiv) {
