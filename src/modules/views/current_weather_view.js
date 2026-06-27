@@ -16,7 +16,7 @@ export default class {
 
     this.currentIcon = document.createElement("img");
     this.currentIcon.classList.add("current-icon");
-    this.currentIcon.classList.toggle("hide-current-icon");
+    this.currentIcon.classList.add("hide-current-icon");
 
     this.celsius = document.createElement("div");
     this.seperator = document.createElement("div");
@@ -70,7 +70,7 @@ export default class {
   render(currentConditions) {
     this.currentIcon.src = icons[currentConditions.icon];
     this.currentIcon.alt = currentConditions.icon + " icon";
-    this.currentIcon.classList.toggle("hide-current-icon");
+    this.currentIcon.classList.remove("hide-current-icon");
 
     this.currentTemp.textContent = Math.floor(currentConditions.temp);
 
