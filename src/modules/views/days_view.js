@@ -55,11 +55,15 @@ export default class {
     timeDiv.classList.add("time-div");
     timeDiv.textContent = convertTime(hour.datetime, true);
 
+    const iconDiv = document.createElement("img");
+    iconDiv.src = icons[hour.icon];
+    iconDiv.alt = hour.icon;
+
     const tempDiv = document.createElement("div");
     tempDiv.classList.add("temp-div");
     tempDiv.textContent = Math.floor(hour.temp) + "°";
 
-    hourDiv.append(timeDiv, tempDiv);
+    hourDiv.append(timeDiv, iconDiv, tempDiv);
 
     this.hoursDiv.append(hourDiv);
   }
