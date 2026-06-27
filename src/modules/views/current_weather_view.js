@@ -19,11 +19,11 @@ export default class {
     this.currentIcon.classList.add("hide-current-icon");
 
     this.celsius = document.createElement("div");
-    this.celsius.classList("celsius");
+    this.celsius.classList.add("celsius");
 
     this.seperator = document.createElement("div");
     this.fahrenheit = document.createElement("div");
-    this.fahrenheit.classList("fahrenheit");
+    this.fahrenheit.classList.add("fahrenheit");
 
     this.degree = document.createElement("div");
     this.degree.classList.add("degree");
