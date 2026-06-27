@@ -5,6 +5,9 @@ export default class {
   constructor() {
     this.form = document.querySelector("form");
 
+    this.hoursDiv = document.createElement("div");
+    this.hoursDiv.classList.add("hours-div");
+
     this.app = document.createElement("days");
     this.app.classList.add("days");
 
@@ -58,7 +61,7 @@ export default class {
 
     hourDiv.append(timeDiv, tempDiv);
 
-    this.app.append(hourDiv);
+    this.hoursDiv.append(hourDiv);
   }
 
   emptyApp() {
